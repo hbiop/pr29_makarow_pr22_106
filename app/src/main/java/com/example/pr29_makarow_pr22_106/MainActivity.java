@@ -35,7 +35,7 @@ Intent intent;
         switch (view.getId())
         {
             case R.id.camera:
-                startActivity(new Intent(this, Camera.class));
+                startActivity(new Intent(this, Camera2.class));
                 break;
             case R.id.phone:
                 intent = new Intent(Intent.ACTION_DIAL);

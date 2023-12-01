@@ -30,11 +30,13 @@ public class Camera extends AppCompatActivity {
 
     ImageView ivPhoto;
 
+    Button photo;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
-        createDirectory();
+        //createDirectory();
+        photo = (Button)findViewById(R.id.btnPhoto);
         ivPhoto = (ImageView) findViewById(R.id.ivPhoto);
         if(ContextCompat.checkSelfPermission(Camera.this,Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED)
         {
@@ -57,7 +59,7 @@ public class Camera extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        super.onActivityResult(requestCode,resultCode,intent);
+        super.onActivityResult(requestCode, resultCode, intent);
         if (requestCode == REQUEST_CODE_PHOTO) {
             if (resultCode == RESULT_OK) {
                 if (intent == null) {
@@ -92,7 +94,7 @@ public class Camera extends AppCompatActivity {
             }
         }
     }
-
+/*
     private Uri generateFileUri(int type) {
         File file = null;
         switch (type) {
@@ -117,5 +119,5 @@ public class Camera extends AppCompatActivity {
         if (!directory.exists())
             directory.mkdirs();
     }
-
+*/
 }
